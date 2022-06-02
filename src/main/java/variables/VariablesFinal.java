@@ -25,6 +25,9 @@ public class VariablesFinal {
         System.out.println(CIUDAD);
         System.out.println(new VariablesFinal().CODIGO_POSTAL);
 
+        System.out.println("Creamos otra instancia y variamos el código postal para esa instancia:");
+        System.out.println(new VariablesFinal((short) 28080).CODIGO_POSTAL);
+
         // Si el valor de una variable final es una instancia, lo que
         // permanece inmutable es la referencia, pero si el objeto
         // puede cambiar, se puede cambiar
@@ -40,5 +43,14 @@ public class VariablesFinal {
      */
     VariablesFinal() {
         CODIGO_POSTAL = 15704;
+    }
+
+    /**
+     * Constructor alternativo que inicializa la variable final de instancia
+     * al valor que le indiquemos (cada instancia podría tener un valor diferente)
+     * @param cp codigo postal
+     */
+    VariablesFinal(short cp) {
+        CODIGO_POSTAL = cp;
     }
 }
