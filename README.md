@@ -1,2 +1,2 @@
-# CURSO_JAVA_PUE
-Curso JAVA 11 de PUE
+# CURSO JAVA PUE
+Apuntes del curso de JAVA 11.
