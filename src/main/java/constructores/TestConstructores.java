@@ -26,5 +26,18 @@ public class TestConstructores {
         InicializacionEstatica conInicializacionEstatica = new InicializacionEstatica("instancia 1");
         conInicializacionEstatica = new InicializacionEstatica("instancia 2");
 
+        System.out.println("--------------- EJEMPLO 6 ---------------");
+        EncadenarConstructores conEncadenarConstructores = new EncadenarConstructores();
+        System.out.println();
+        conEncadenarConstructores = new EncadenarConstructores("Parametro1");
+        System.out.println();
+        conEncadenarConstructores = new EncadenarConstructores("Parámetro1", "Parámetro2");
+
+        System.out.println("--------------- EJEMPLO 7 ---------------");
+        ConstructorPorCopia objetoParaCopiar = new ConstructorPorCopia("Texto", 1000);
+        ConstructorPorCopia objetoCopiado = new ConstructorPorCopia(objetoParaCopiar);
+        System.out.println("Son el mismo objeto? " + (objetoCopiado == objetoParaCopiar));
+        System.out.println("Son iguales? " + objetoCopiado.equals(objetoParaCopiar));
+
     }
 }
