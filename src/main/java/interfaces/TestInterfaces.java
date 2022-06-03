@@ -35,6 +35,15 @@ public class TestInterfaces {
         interfazFuncional = (modelo, marca) -> "Modelo: " + modelo + " marca: " + marca;
         System.out.println(interfazFuncional.metodo("León", "Seat"));
 
+        // Si hay varias intrucciones en el cuerpo del método, debemos encerrarlo entre llaves
+        // e indicar los retornos manualmente con return
+        interfazFuncional = (String usuario, String password) -> {
+            if("MrRobot".equals(usuario) && "nopassword".equals(password)) {
+                return "Acceso permitido";
+            }
+            return "Acceso denegado";
+        };
+        System.out.println("MrRobot tratando de acceder: " + interfazFuncional.metodo("MrRobot", "nopassword"));
     }
 
 }

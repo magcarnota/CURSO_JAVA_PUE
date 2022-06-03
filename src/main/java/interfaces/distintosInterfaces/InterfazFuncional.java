@@ -9,5 +9,5 @@ package interfaces.distintosInterfaces;
 @FunctionalInterface
 public interface InterfazFuncional {
 
-    public String metodo(String nombre, String msg);
+    public String metodo(String s1, String s2);
 }
