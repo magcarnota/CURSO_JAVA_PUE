@@ -14,13 +14,19 @@ public class TestInterfaces {
         objetoMiClase.saludaA("Pedro");
         objetoMiClase.despideteDe("Juan");
 
-        System.out.println("---------------------- EJEMPLO 1 ----------------------");
+        System.out.println("---------------------- EJEMPLO 2 ----------------------");
         MiClase2 objetoMiClase2 = new MiClase2();
         objetoMiClase2.metodoDefault();
         objetoMiClase2.metodoSinModificadorVisibilidad();
         objetoMiClase2.metodoPublic();
 
         InterfazTiposDeMetodos.metodoStatic();  // El método static pertenece al interfaz, no al objeto
+
+        System.out.println("---------------------- EJEMPLO 3 ----------------------");
+        MiClase3 objetoMiClase3 = new MiClase3();
+        objetoMiClase3.metodo();
+
+        System.out.println(InterfazConAtributos.ATRIBUTO); // Podemos acceder al atributo desde el interfaz
 
     }
 }
@@ -48,5 +54,13 @@ class MiClase2 implements InterfazTiposDeMetodos {
     @Override
     public void metodoPublic() {
         System.out.println("Método con modificador public");
+    }
+}
+
+class MiClase3 implements InterfazConAtributos {
+
+    @Override
+    public void metodo() {
+        System.out.println("Método implementado");
     }
 }
