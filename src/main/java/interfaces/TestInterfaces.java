@@ -37,6 +37,7 @@ public class TestInterfaces {
 
         // Si hay varias intrucciones en el cuerpo del método, debemos encerrarlo entre llaves
         // e indicar los retornos manualmente con return
+
         interfazFuncional = (String usuario, String password) -> {
             if("MrRobot".equals(usuario) && "nopassword".equals(password)) {
                 return "Acceso permitido";

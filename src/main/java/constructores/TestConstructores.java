@@ -21,5 +21,10 @@ public class TestConstructores {
         System.out.println("--------------- EJEMPLO 4 ---------------");
         ClaseConConstructorHija conConstructorHija = new ClaseConConstructorHija("Atributo en padre", "Atributo en hija");
         conConstructorHija.mostrarMsg();
+
+        System.out.println("--------------- EJEMPLO 5 ---------------");
+        InicializacionEstatica conInicializacionEstatica = new InicializacionEstatica("instancia 1");
+        conInicializacionEstatica = new InicializacionEstatica("instancia 2");
+
     }
 }
