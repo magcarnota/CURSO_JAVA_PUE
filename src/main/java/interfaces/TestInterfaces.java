@@ -28,7 +28,15 @@ public class TestInterfaces {
 
         System.out.println(InterfazConAtributos.ATRIBUTO); // Podemos acceder al atributo desde el interfaz
 
+        System.out.println("---------------------- EJEMPLO 4 ----------------------");
+        InterfazFuncional interfazFuncional = (nombre, msg) -> nombre + " dijo: " + msg;
+        System.out.println(interfazFuncional.metodo("Don Pepito", "Hola don José"));
+
+        interfazFuncional = (modelo, marca) -> "Modelo: " + modelo + " marca: " + marca;
+        System.out.println(interfazFuncional.metodo("León", "Seat"));
+
     }
+
 }
 
 class MiClase1 implements InterfazVariosMetodos {
