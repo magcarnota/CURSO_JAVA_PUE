@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class TestInterfaceComparable {
     public static void main(String[] args) {
-        System.out.println("Creamos varios objetos con atributo String:");
+        System.out.println("Creamos varios objetos con atributo String e Integer:");
         MiClase objeto1 = new MiClase("Juan", 23);
         MiClase objeto2 = new MiClase("Pedro", 20);
         MiClase objeto3 = new MiClase("Ana", 41);
