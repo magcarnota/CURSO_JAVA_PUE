@@ -81,7 +81,7 @@ public class Persona {
          * en caso contrario).
          * @return
          */
-        public Persona contruir() {
+        public Persona construir() {
             return new Persona(nombre, edad, direccion);
         }
     }
