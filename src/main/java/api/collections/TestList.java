@@ -14,11 +14,14 @@ public class TestList {
         Set<String> conjunto = new HashSet<>();
         List<String> listaCreadaDesdeUnConjunto = new ArrayList<>(conjunto);    // El constructor acepta cualquier otro tipo de colección
 
-        List<Integer> listaAsList = Arrays.asList(1, 2, 3, 4);  // Devuelve un List con los elementos indicados
+        List<Integer> listaAsList = Arrays.asList(1, 2, 3);  // Devuelve un List con los elementos indicados
         ArrayList<Integer> arrayListArrayElementos = new ArrayList<>(listaAsList);  // Hay que crear una implementación no abstracta a partir del List
-        arrayListArrayElementos.add(89);
+        arrayListArrayElementos.add(89);                // Añade al final {1, 2, 3, 89}
+        arrayListArrayElementos.add(0, 5);  // Añade en el índice indicado y desplaza los demás elmentos {5, 1, 2, 3, 89}
+        arrayListArrayElementos.remove(3);        // Elimina la posicion 4 y desplaza las demás {5, 1, 2, 89}
+        arrayListArrayElementos.set(0, 0);              // Actualiza el elemento de la posición dada con el valor dado {0, 1, 2, 89}
 
-        mostrarListaInteger("Creada con Arrays.asList(1, 2, 3, 4): ", arrayListArrayElementos);
+        mostrarListaInteger("Creada con Arrays.asList(1, 2, 3): ", arrayListArrayElementos);
 
         List<Double> listaSoloLectura = List.of(0.1, 3.5, 12.23, 4.2);  // Crea una lista de solo lectura
         //listaSoloLectura.add(2.345);  // UnsupportedOperationException ya que List.of() devuelve una lista inmutable
