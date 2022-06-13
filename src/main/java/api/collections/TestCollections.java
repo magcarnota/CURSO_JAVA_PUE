@@ -1,9 +1,7 @@
 package api.collections;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Clase para testing de Collections
@@ -34,5 +32,16 @@ public class TestCollections {
 
         System.out.println("Lista desordenada:");
         lista.forEach( e -> System.out.println(e + " "));   // Mostramos la lista
+
+        // Para trabajar con acceso concurrente y prevenir la corrupción de memoria
+        // se pueden usar colecciones de sólo lectura, sincronizadas o copy-on-write
+        Map<Integer, String> map = new HashMap<>();
+        Map<Integer, String> mapaSincronizado = Collections.synchronizedMap(map);
+
+        Set<String> conjunto = new HashSet<>();
+        Set<String> conjuntoSoloLectura = Collections.unmodifiableSet(conjunto);
+
+        List<Double> listaDeDouble = new ArrayList<>();
+        List<Double> listaCopyOnWrite = new CopyOnWriteArrayList<>(listaDeDouble);
     }
 }
