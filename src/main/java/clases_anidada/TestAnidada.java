@@ -1,4 +1,4 @@
-package clases_anidadas.estaticas;
+package clases_anidada;
 
 /**
  * Clase para testing de clase interna
@@ -6,7 +6,7 @@ package clases_anidadas.estaticas;
  */
 public class TestAnidada {
     public static void main(String[] args) {
-        ClaseConClaseAnidadaInterna externa = new ClaseConClaseAnidadaInterna("Objeto clase externa!");
+        clases_anidada.ClaseConClaseAnidadaInterna externa = new clases_anidada.ClaseConClaseAnidadaInterna("Objeto clase externa!");
 
         System.out.println(externa.msg);
         System.out.println(externa.objetoClaseInterna.msg_interna);

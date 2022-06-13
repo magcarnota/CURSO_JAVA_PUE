@@ -1,4 +1,4 @@
-package clases_anidadas.estaticas;
+package clases_anidada;
 
 /**
  * Clase con otra clase anidada estática en su interior
@@ -6,7 +6,7 @@ package clases_anidadas.estaticas;
  */
 public class ClaseConClaseAnidadaInterna {
     String msg;
-    ClaseInterna objetoClaseInterna;
+    public ClaseInterna objetoClaseInterna;
     public class ClaseInterna {
         String msg_interna;
         ClaseInterna(String msg) {
@@ -14,7 +14,7 @@ public class ClaseConClaseAnidadaInterna {
         }
     }
 
-    ClaseConClaseAnidadaInterna(String msg) {
+    public ClaseConClaseAnidadaInterna(String msg) {
         this.msg = msg;
         objetoClaseInterna = new ClaseInterna("Objeto clase interna!");
     }

@@ -1,4 +1,6 @@
-package clases_anidadas.estaticas;
+package clases_anidada;
+
+import clases_anidada.estatica.ClaseConClaseAnidadaInternaEstatica;
 
 /**
  * Clase para testing de clases anidadas internas estáticas

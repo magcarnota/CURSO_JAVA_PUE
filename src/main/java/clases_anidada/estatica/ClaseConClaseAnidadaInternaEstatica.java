@@ -1,19 +1,19 @@
-package clases_anidadas.estaticas;
+package clases_anidada.estatica;
 
 /**
  * Clase con otra clase anidada estática en su interior
  * @author magcarnota
  */
 public class ClaseConClaseAnidadaInternaEstatica {
-    String msg;
+    public String msg;
     static public class ClaseInterna {
-        String msg_interna;
-        ClaseInterna(String msg) {
+        public String msg_interna;
+        public ClaseInterna(String msg) {
             msg_interna = msg;
         }
     }
 
-    ClaseConClaseAnidadaInternaEstatica(String msg) {
+    public ClaseConClaseAnidadaInternaEstatica(String msg) {
         this.msg = msg;
     }
 
