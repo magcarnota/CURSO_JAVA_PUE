@@ -3,6 +3,7 @@ package streams;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Consumer;
 
 /**
  * Clase para testing de streams
@@ -48,6 +49,27 @@ public class TestStreams {
                 .peek(producto -> System.out.println(producto))     // Para cada uno que haya pasado el filtro lo mostramos
                 .count();   // Realizamos el recuento
         System.out.println("Total de productos con precio igual a 1.25: " + total);
+
+        System.out.println();
+
+        System.out.println("Podemos enlazar varios Consumers con el método de Consumer andThen(<Consumer>).");
+        System.out.println("Aplicamos a todos los productos con precio mayor o igual a 1.95 un descuento del 10% y");
+        System.out.println("marcamos el nombre como REBAJADO:");
+        Consumer<Producto> aplicaDescuento = producto -> producto.setPrecio(producto.getPrecio() * 0.9);
+        Consumer<Producto> marcaRebajado = producto -> producto.setNombre(producto.getNombre() + " REBAJADO");
+
+        lista.stream()
+                .filter( producto -> producto.getPrecio() >= 1.95 )  // Filtramos por los productos con precio >= 1.95
+                .peek( System.out::println )    // Mostramos los productos que superan el filtro
+                .forEach( aplicaDescuento.andThen(marcaRebajado) ); // Aplicamos primero el descuento y después marcamos REBAJADO
+
+        System.out.println();
+
+        System.out.println("Productos rebajados:");
+        lista.stream()
+                .filter( producto -> producto.getNombre().contains("REBAJADO") )
+                .forEach(System.out::println);
+
     }
 
     /**
@@ -75,6 +97,8 @@ class Producto {
 
     public String getNombre() { return this.nombre; }
     public double getPrecio() { return this.precio; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setPrecio(double precio) { this.precio = precio; }
     @Override
     public String toString() { return nombre + " - " + precio; }
 }
