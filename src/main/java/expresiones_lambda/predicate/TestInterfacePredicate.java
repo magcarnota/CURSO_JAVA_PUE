@@ -1,4 +1,4 @@
-package interfaces.predicate;
+package expresiones_lambda.predicate;
 
 import java.util.ArrayList;
 import java.util.List;
