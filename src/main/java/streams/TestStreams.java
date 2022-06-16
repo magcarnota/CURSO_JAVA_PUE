@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 /**
  * Clase para testing de streams
@@ -68,6 +69,18 @@ public class TestStreams {
         System.out.println("Productos rebajados:");
         lista.stream()
                 .filter( producto -> producto.getNombre().contains("REBAJADO") )
+                .forEach(System.out::println);
+
+        System.out.println();
+
+        System.out.println("Podemos combinar varios predicados en el filtro con los métodos por defecto de Predicate");
+        System.out.println("and(<Predicate>), or(<Predicate>) y negate().");
+        System.out.println("Mostramos todos los productos que tengan un precio superior o igual a 1.90 y su nombre contenga \"5\":");
+        Predicate<Producto> precioSuperiorA = producto -> producto.getPrecio() >= 1.9;
+        Predicate<Producto> nombreContiene5 = producto -> producto.getNombre().contains("5");
+
+        lista.stream()
+                .filter( precioSuperiorA.and(nombreContiene5) )
                 .forEach(System.out::println);
 
     }
