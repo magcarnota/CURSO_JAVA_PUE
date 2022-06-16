@@ -2,6 +2,7 @@ package streams;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -83,6 +84,16 @@ public class TestStreams {
                 .filter( precioSuperiorA.and(nombreContiene5) )
                 .forEach(System.out::println);
 
+        System.out.println();
+
+        System.out.println("Reducimos la lista");
+        Optional<String> resultado = lista.stream()     // OJO que reduce() devuelve un Optional<T>
+                .limit(5)   // Nos quedamos sólo con 5 elementos
+                .map(producto -> producto.getNombre())  // Transformamos un stream de productos a uno de Strings
+                .reduce( (p1, p2) -> p1 + " - " + p2 );  // Concatenamos cada nombre con el siguiente
+
+        if(resultado.isPresent())   // Habrá que comprobar si hay algo en el resultado ya que es un Optional
+            System.out.println(resultado.get());
     }
 
     /**
