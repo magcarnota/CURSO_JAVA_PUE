@@ -1,7 +1,5 @@
 package excepciones;
 
-import java.sql.SQLOutput;
-
 /**
  * Clase para testing de excepciones.
  * Throwable
