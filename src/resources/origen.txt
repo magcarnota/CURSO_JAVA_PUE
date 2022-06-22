@@ -1,0 +1,2 @@
+This is some dummy text.
+Only for testing IO and NIO api.
